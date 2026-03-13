@@ -1,0 +1,8 @@
+package com.minibank.app.account_service.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+public record CreditAccountResponse(UUID accountId, String accountNumber, String ownerName, BigDecimal balance, LocalDateTime updatedAt) {
+}
