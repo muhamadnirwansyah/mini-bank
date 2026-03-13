@@ -1,4 +1,4 @@
-package com.minibank.app.account_service.config;
+package com.minibank.app.transaction_service.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -15,12 +15,13 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI(){
         return new OpenAPI()
                 .info(new Info()
-                        .title("Account Service API")
+                        .title("Transaction Service API")
                         .version("1.0")
-                        .description("API untuk layanan account bank"))
-                .addServersItem(new Server().url("/accounts")
-                        .description("For Gateway Server"))
-                .addServersItem(new Server().url("http://localhost:9090")
+                        .description("API untuk layanan transfer bank"))
+                .addServersItem(new Server().url("/transactions")
+                        .description("For Gateway Server")
+                ).addServersItem(new Server().url("http://localhost:9191")
                         .description("Local Server"));
     }
+
 }

@@ -31,3 +31,10 @@ management:
     web:
       exposure:
         include: "*"
+springdoc:
+  swagger-ui:
+    urls:
+      - name: account-service
+        url: /accounts/v3/api-docs
+      - name: transaction-service
+        url: /transactions/v3/api-docs
