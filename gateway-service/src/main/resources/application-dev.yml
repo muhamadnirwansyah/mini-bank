@@ -18,6 +18,10 @@ spring:
                 - Path=/transactions/**
               filters:
                 - StripPrefix=1
+                - name: CircuitBreaker
+                  args:
+                    id: transactionServiceCircuitBreaker
+                    fallbackUri: forward:/fallback/transaction
 eureka:
   client:
     service-url:

@@ -5,6 +5,7 @@ import com.minibank.app.transaction_service.dto.CreditRequest;
 import com.minibank.app.transaction_service.dto.DebitRequest;
 import com.minibank.app.transaction_service.dto.GetAccountRequest;
 import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -17,8 +18,9 @@ public class AccountClient {
 
     private final WebClient webClient;
 
-    public AccountClient(WebClient.Builder builder){
-        this.webClient = builder.baseUrl("http://account-service")
+    public AccountClient(WebClient.Builder builder,
+                         @Value("${account-service.url}")String accountService){
+        this.webClient = builder.baseUrl(accountService)
                 .build();
     }
 
